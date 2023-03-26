@@ -7,7 +7,7 @@
 
 ## About PyTime
 PyTime is a speedrun retime tool made to replace tool [SPRT](https://github.com/Slush0Puppy/retime) with loads and more!
-![GUI](https://i.imgur.com/hnEriXal.png)
+![GUI](https://i.imgur.com/SOhx1P6l.png)
 
 ## Overview
 - Perfect Accuracy
