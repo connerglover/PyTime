@@ -1,75 +1,66 @@
-# Repository Quick Start template
+# ![Logo](https://user-images.githubusercontent.com/110003454/202070516-6a86e5af-6085-4766-97ac-93586de31915.png)  PyTime
 ## Index
   - [Overview](#overview) 
-  - [Getting Started](#getting-started)
-  - [Contributing](#contributing)
-  - [Authors](#authors)
+  - [Tutorial](#tutorial)
+  - [Credits](#credits)
   - [License](#license)
-<!--  Other options to write Readme
-  - [Deployment](#deployment)
-  - [Used or Referenced Projects](Used-or-Referenced-Projects)
--->
-## About RepositoryTemplate
-<!--Wirte one paragraph of project description -->  
-This project's purpose is to create a make Repository with a collection of default settings  
+
+## About PyTime
+PyTime is a speedrun retime tool made to replace tool [SPRT](https://github.com/Slush0Puppy/retime) with loads and more!
+![GUI](https://camo.githubusercontent.com/ccb52e6c717f79b4f40514bb462ccbe6510e9f2a3e3e56ed8ad3cc785dda6442/68747470733a2f2f692e696d6775722e636f6d2f67374f413264722e706e67)
 
 ## Overview
-<!-- Write Overview about this project -->
-**If you use this template, you can use this function**
-- Issue Template
-- Pull Request Template
-- Commit Template
-- Readme Template
-- Contribute Template
-- Pull Request Build Test(With Github Actions)
+- Perfect Accuracy
+- Easy to Use GUI
+- Debug Info
+- Loads
 
-## Getting Started
-**click `Use this template` and use this template!**
-<!--
-### Depencies
- Write about need to install the software and how to install them 
--->
-### Installing
-<!-- A step by step series of examples that tell you how to get a development 
-env running
+## Tutorial
+(Make sure your video resolution is set at the highest setting.)
+1. Find and input the framerate
+  
+  Right click the YouTube video player and click "Stats for nerd" at "Current / Optimal Res" where a resolution is visible, the resolution will be followed by @XX, the XX is the video's framerate, input that into the input box called "FPS."
+  
+2. Input the Start and the End
 
-Say what the step will be
+  First, you need to find the first frame of the run. You can do this by using the , and . key, this allows you to advance 1 frame. Once you've located the first frame right click and press Copy debug info, then click the "Paste" button next to the "Debug info Start." Then, you need to find the last frame of the run. Once you've located the last frame right click and press Copy debug info, then click the "Paste" button next to the "Debug info End."
+  
+3. Inputing the loads
 
-    Give the example
+  First, you need to find the first frame of the load. Once you've located the first frame right click and press Copy debug info, then click the "Paste" button next to the "Debug info Start (Loads)". Then, you need to find the last frame of the load. Once you've located the last frame right click and press Copy debug info, then click the "Paste" button next to the "Debug info End (Loads)".
+  **If you mess up the loads you can removes all the loads by clicking "Remove all Loads".**
 
-And repeat
+4. Calculating the Final Time
 
-    until finished
--->
-1. Click `Use this template` button 
-2. Create New Repository
-3. Update Readme and Others(Other features are noted in comments.)
-<!--
-## Deployment
- Add additional notes about how to deploy this on a live system
- -->
+  Click Calculate, it will calculate the time with and without loads. Make sure to confirm wether or not you would like to Copy the Mod Message. If you copy the mod message you can paste it into speedrun.com Mod Message portion.
+
+
+### Installation
+1. Click [Releases](https://github.com/ConnerConnerConner/PyTime/releases/) to view available binaries of this program.
+2. Click the binary you'd like to download (e.g. v1.0.3 Pytime Installer.exe).
+3. Wait for the Program to finish downloading.
+4. Run the Installer and wait for it to finish.
+
+**Congratulations, you have successfully installed PyTime!**
+
 ## Contributing
-<!-- Write the way to contribute -->
-I am looking for someone to help with this project. Please advise and point out.  
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute, and the process for submitting pull requests to us.
 
-## Authors
-  - [Always0ne](https://github.com/Always0ne) - **SangIl Hwang** - <si8363@soongsil.ac.kr>
+## Credits
+  - [Conner](https://github.com/ConnerConnerConner) (author of program)
+  - [rekkto](https://github.com/rekkto) (helped with a lot of this project)
+  - [Slush0Puppy](https://github.com/Slush0Puppy) (frame rounding equasion)
+  - [zromick](https://github.com/zromick) (created the concept of a speedrun retimer)
+  - [Alyways0ne](https://github.com/Always0ne) (created [repositoryTemplate](https://github.com/always0ne/repositoryTemplate) which this repository uses)
 
-See also the list of [contributors](https://github.com/always0ne/readmeTemplate/contributors)
-who participated in this project.
-<!--
-## Used or Referenced Projects
- - [referenced Project](project link) - **LICENSE** - little-bit introduce
--->
+**Thanks to all of these people, this program wouldn't be possible without them!**
 
 ## License
 
 ```
 MIT License
 
-Copyright (c) 2020 always0ne
+Copyright (c) 2023 Conner Glover
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
