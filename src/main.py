@@ -45,9 +45,6 @@ def calculate_loads(start_info, end_info, fps):
     except KeyError:
         sg.popup('Error (End CMT)', 'CMT is not Valid.',title='Error', icon=r'assets\pytime.ico')  # Error Message
         return
-    # Rounds the CMT to the nearest frame
-    start_time = round(d(start_time - start_time % (d(1) / fps)), 3)
-    end_time = round(d(end_time - end_time % (d(1) / fps)), 3)
     # Calculates the Loads
     loads = d(end_time) - d(start_time)
     loads = round(d(loads - loads % (d(1) / fps)), 3)
@@ -155,7 +152,7 @@ else:
                         continue
                 else:
                     try:
-                        loads = calculate_loads(start_loads_info, end_loads_info, fps) + loads
+                        loads += calculate_loads(start_loads_info, end_loads_info, fps) 
                         main_window['start_loads'].update('')  # Calculates Loads
                         main_window['end_loads'].update('')
                     except Exception:
