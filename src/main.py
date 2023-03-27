@@ -1,6 +1,5 @@
 from json import loads as json_loads
-from re import L
-from pyperclip import copy
+from pyperclip import copy, paste
 import PySimpleGUI as sg
 from decimal import Decimal as d
 
@@ -9,8 +8,7 @@ sg.theme('DarkGrey12')
 
 class retime: #Class for all timer related functions
     def frame_round(time, fps): # Rounds to the nearest frame
-        time = d(time)
-        time = round(time, 3)
+        time = d(round(time, 3))
         output = d(time - time%(d(1)/fps)) #Credit to Slush0Puppy for this 1 Line of Code
         return round(output, 3)
 
@@ -18,10 +16,8 @@ class retime: #Class for all timer related functions
     def format(time):
         time = str(time)
         time = time.split('.', 1)
-        seconds = time[0]
-        milliseconds = time[1]
-        milliseconds = str(milliseconds)
-        seconds = int(seconds)
+        seconds = int(time[0])
+        milliseconds = str(time[1])
         minutes = seconds//60
         hours = minutes//60
         if seconds > 60: #makes sure that the seconds are less than 60
@@ -29,21 +25,18 @@ class retime: #Class for all timer related functions
         if minutes > 60: #makes sure that the minutes are less than 60
             minutes = minutes - (hours * 60)
         #Converts Integers to Strings
-        seconds = str(seconds)
-        minutes = str(minutes)
-        hours = str(hours)
         #Combines the time into a single string
         if seconds == '0':
             return (f'0s {milliseconds}ms')
         elif minutes == '0':
             if len(seconds) == 1:
-                return (f'0{seconds}s {milliseconds}ms')
+                return (f'0{str(seconds)}s {milliseconds}ms')
             else:
-                return (f'{seconds}s {milliseconds}ms')
+                return (f'{str(seconds)}s {milliseconds}ms')
         elif hours == '0':
-            return (f'{minutes}m {seconds}s {milliseconds}ms')
+            return (f'{str(minutes)}m {str(seconds)}s {milliseconds}ms')
         else:
-            return (f'{hours}h {minutes}m {seconds}s {milliseconds}ms')
+            return (f'{str(hours)}h {str(minutes)}m {str(seconds)}s {milliseconds}ms')
         
     #Calculates the loads
     def loads(dbi_start, dbi_end, fps):
@@ -110,26 +103,26 @@ class retime: #Class for all timer related functions
         if loads == 0:
             final_confirm = sg.popup_yes_no(f'Without Loads: {no_loads}', 'Would you like the Mod Note to be Copied to the Clipboard?', title = 'Results')
             if final_confirm == 'Yes':
-                copy(f'Mod Note: Retimed to {no_loads} at {fps} using https://github.com/ConnerConnerConner/PyTime')
+                copy(f'Mod Note: Retimed to {no_loads} at {fps} FPS using [PyTime](https://github.com/ConnerConnerConner/PyTime)')
             elif final_confirm == 'No':
                return 
         else:
             final_confirm = sg.popup_yes_no(f'Without Loads: {no_loads}, With Loads: {with_loads}', 'Mod Note Copied to Clipboard', title = 'Results')
         if final_confirm == 'Yes':
-            copy(f'Mod Note: Retimed to {no_loads} at {fps} using https://github.com/ConnerConnerConner/PyTime')
+            copy(f'Mod Note: Retimed to {no_loads} at {fps} FPS using [PyTime](https://github.com/ConnerConnerConner/PyTime)')
         elif final_confirm == 'No':
              return
 
 #GUI Layout
 main_layout = [
-        [sg.Text('PyTime', font = ('Helvetica', 36)), sg.Text('   FPS', font = (' Helvetica', 30)), sg.InputText('60', size = (5, 1), key = 'fps', font = ('Helvetica', 30))],
-        [sg.InputText(key = 'dbis', font = ('Helvetica', 16), pad = ((5, 0), (0, 0)), size = (20, 1)), sg.Text('  Debug Info Start', font = ('Helvetica', 16), justification = 'right')],
-        [sg.InputText(key = 'dbie', font = ('Helvetica', 16), pad = ((5, 0), (0, 0)), size = (20, 1)), sg.Text('  Debug Info End', font = ('Helvetica', 16), justification = 'right')],
-        [sg.InputText(key = 'dbis_loads', font = ('Helvetica', 14), pad = ((5, 0), (0, 0)), size = (15, 1)), sg.Text('   Debug Info Start (Loads)', font = ('Helvetica', 14), justification = 'right')],
-        [sg.InputText(key = 'dbie_loads', font = ('Helvetica', 14), pad = ((5, 0), (0, 0)), size = (15, 1)), sg.Text('   Debug Info End (Loads)', font = ('Helvetica', 14), justification = 'right')],
-        [sg.Button('Calculate', font = ('Helvetica', 16)), sg.Button('Add Loads', font = ('Helvetica', 16)), sg.Button('Remove All Loads', font = ('Helvetica', 16))]
+        [sg.Text('PyTime', font = ('Helvetica', 48)), sg.Text(' FPS', font = ('Helvetica', 40)), sg.InputText('60', size = (4, 1), key = 'fps', font = ('Helvetica', 36))],
+        [sg.Button('Paste', font = ('Helvetica', 10), key = 'paste_dbis'), sg.InputText(key = 'dbis', font = ('Helvetica', 16), pad = ((5, 0), (0, 0)), size = (20, 1)), sg.Text('  Debug Info Start', font = ('Helvetica', 16), justification = 'right')],
+        [sg.Button('Paste', font = ('Helvetica', 10), key = 'paste_dbie'), sg.InputText(key = 'dbie', font = ('Helvetica', 16), pad = ((5, 0), (0, 0)), size = (20, 1)), sg.Text('  Debug Info End', font = ('Helvetica', 16), justification = 'right')],
+        [sg.Button('Paste', font = ('Helvetica', 10), key = 'paste_dbis_loads'), sg.InputText(key = 'dbis_loads', font = ('Helvetica', 14), pad = ((5, 0), (0, 0)), size = (15, 1)), sg.Text('   Debug Info Start (Loads)', font = ('Helvetica', 14), justification = 'right')],
+        [sg.Button('Paste', font = ('Helvetica', 10), key = 'paste_dbie_loads'), sg.InputText(key = 'dbie_loads', font = ('Helvetica', 14), pad = ((5, 0), (0, 0)), size = (15, 1)), sg.Text('   Debug Info End (Loads)', font = ('Helvetica', 14), justification = 'right')],
+        [sg.Button('Calculate', font = ('Helvetica', 18)), sg.Button('Add Loads', font = ('Helvetica', 18)), sg.Button('Remove All Loads', font = ('Helvetica', 18))]
     ]
-main_window = sg.Window('PyTime', main_layout, resizable = False, element_justification = 'left', size=(447, 253))
+main_window = sg.Window('PyTime', main_layout, resizable = False, element_justification = 'left', size = (516, 275), finalize = True)
 
 #Main Loop
 while True:
@@ -157,7 +150,7 @@ while True:
             continue
         if not 'loads' in globals() or loads == 0: #Checks if Loads exists
             try:
-                loads = retime.loads(dbis_loads, dbiel_loads, fps) #Calculates Loade
+                loads = retime.loads(dbis_loads, dbiel_loads, fps) #Calculates Loads
                 main_window['dbis_loads'].update('')
                 main_window['dbie_loads'].update('')
             except:
@@ -165,8 +158,8 @@ while True:
         else:
             try:
                 loads = retime.loads(dbis_loads, dbiel_loads, fps) + loads
-                main_window['dbis_loads'].update('')
-                main_window['dbie_loads'].update('') #Calculates Loads
+                main_window['dbis_loads'].update('') #Calculates Loads
+                main_window['dbie_loads'].update('') 
             except:
                 continue
     if event == 'Calculate':
@@ -189,6 +182,17 @@ while True:
             #Clears Input Boxes
             main_window['dbis'].update('')
             main_window['dbie'].update('')
+    #Checks if the Paste Button is Pressed
+    #Pastes the Clipboard to the Input Box
+    if event == 'paste_dbis':
+        main_window['dbis'].update(paste())
+    if event == 'paste_dbie':
+        main_window['dbie'].update(paste())
+    if event == 'paste_dbis_loads':
+        main_window['dbis_loads'].update(paste())
+    if event == 'paste_dbie_loads':
+        main_window['dbie_loads'].update(paste())
+
 
 main_window.close() #Closes the Window once
 
