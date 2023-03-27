@@ -47,7 +47,7 @@ def main():
         except KeyError:
             sg.popup_error('Error (Start)', 'CMT is not Valid.',title='Error', icon=r'assets\pytime.ico')  # Error Message
             return
-        start_frame = get_frame(start_time, fps)
+        start_frame = get_frame(start_info, fps)
         try:
             end_time = json_loads(end_info)['cmt']
         except JSONDecodeError:
