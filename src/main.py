@@ -155,11 +155,18 @@ while True:
         except:
             sg.popup('Error (FPS)', 'FPS is not a valid number.', title = 'Error') #Error Message
             continue
-        if not 'loads' in globals(): #Checks if Loads exists
-            loads = retime.loads(dbis_loads, dbiel_loads, fps) #Calculates Loads
+        if not 'loads' in globals() or loads == 0: #Checks if Loads exists
+            try:
+                loads = retime.loads(dbis_loads, dbiel_loads, fps) #Calculates Loade
+                main_window['dbis_loads'].update('')
+                main_window['dbie_loads'].update('')
+            except:
+                continue
         else:
             try:
-                loads = retime.loads(dbis_loads, dbiel_loads, fps) + loads #Calculates Loads
+                loads = retime.loads(dbis_loads, dbiel_loads, fps) + loads
+                main_window['dbis_loads'].update('')
+                main_window['dbie_loads'].update('') #Calculates Loads
             except:
                 continue
     if event == 'Calculate':
