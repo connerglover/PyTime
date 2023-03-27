@@ -12,7 +12,7 @@ class RetimeFrame(ctk.CTkFrame):
         height: int = 200,
         corner_radius: Optional[Union[int, str]] = 0,
         border_width: Optional[Union[int, str]] = None,
-        bg_color: Union[str, Tuple[str, str]] = "#343638",
+        bg_color: Union[str, Tuple[str, str]] = "transparent",
         fg_color: Optional[Union[str, Tuple[str, str]]] = None,
         border_color: Optional[Union[str, Tuple[str, str]]] = None,
         background_corner_colors: Union[
@@ -95,3 +95,7 @@ class RetimeFrame(ctk.CTkFrame):
             padx=(5, 5),
             sticky="nse",
         )
+        
+        # Time display box
+        self.time_display = ctk.CTkTextbox(master=self, bg_color="#333333", state="disabled", activate_scrollbars=False, font=("", 32), corner_radius=5, width=431, height=20)
+        self.time_display.grid(row=5, column=2, columnspan=2, pady=(5, 5), padx=(5, 5), sticky="n")
