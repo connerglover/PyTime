@@ -105,7 +105,7 @@ class RetimeFrame(ctk.CTkFrame):
             justify="center",
             width=431,
             height=20,
-            text="1h 37 35s 000ms",
+            text="",
         )
         self.time_display.grid(
             row=5, column=2, columnspan=2, pady=(5, 5), padx=(5, 5), sticky="ne"

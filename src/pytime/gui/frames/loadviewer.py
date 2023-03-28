@@ -45,6 +45,6 @@ class LoadViewerFrame(ctk.CTkScrollableFrame):
             label_anchor,
             orientation,
         )
-
+        
         self.app: app.App = self.master.winfo_toplevel()
         
