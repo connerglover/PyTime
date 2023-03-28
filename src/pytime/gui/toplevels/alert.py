@@ -10,6 +10,7 @@ class AlertTopLevel(ctk.CTkToplevel):
         title: str,
         text: str,
         button_text: str = "Close",
+        bell: bool = True,
         width: int = 350,
         height: int = 100,
         fg_color: Optional[Union[str, Tuple[str, str]]] = None,
@@ -42,6 +43,10 @@ class AlertTopLevel(ctk.CTkToplevel):
         # Close Button
         self.close_button = ctk.CTkButton(self, text=button_text, command=self.destroy)
         self.close_button.grid(row=1, column=0, padx=(5, 5), pady=(5, 5))
+
+        # Bell
+        if bell:
+            self.bell()
 
         # Prevent use of app while activate window is open
         self.grab_set()

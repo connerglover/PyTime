@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Auto-PY-to-EXE",
+            "type": "shell",
+            "command": "auto-py-to-exe && exit",
+            "presentaiton": {
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
