@@ -17,7 +17,7 @@ chore: about build or deploy(not changes code)
 
 
 ## mention
-@always0ne
+@
 
 Resolves: #
 See also: #
