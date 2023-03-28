@@ -95,7 +95,18 @@ class RetimeFrame(ctk.CTkFrame):
             padx=(5, 5),
             sticky="nse",
         )
-        
+
         # Time display box
-        self.time_display = ctk.CTkTextbox(master=self, bg_color="#333333", state="disabled", activate_scrollbars=False, font=("", 32), corner_radius=5, width=431, height=20)
-        self.time_display.grid(row=5, column=2, columnspan=2, pady=(5, 5), padx=(5, 5), sticky="n")
+        self.time_display = ctk.CTkLabel(
+            master=self,
+            bg_color="#333333",
+            corner_radius=5,
+            font=("", 43.5),
+            justify="center",
+            width=431,
+            height=20,
+            text="1h 37 35s 000ms",
+        )
+        self.time_display.grid(
+            row=5, column=2, columnspan=2, pady=(5, 5), padx=(5, 5), sticky="ne"
+        )

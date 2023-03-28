@@ -2,6 +2,7 @@ import customtkinter as ctk
 from customtkinter import CTkFont
 from typing import Optional, Tuple, Union, Literal
 from pytime.gui import app
+from pytime.gui.frames.loadelement import LoadElement
 
 
 class LoadViewerFrame(ctk.CTkScrollableFrame):
@@ -44,5 +45,6 @@ class LoadViewerFrame(ctk.CTkScrollableFrame):
             label_anchor,
             orientation,
         )
-        
+
         self.app: app.App = self.master.winfo_toplevel()
+        
