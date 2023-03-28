@@ -9,10 +9,6 @@ class Menu:
         self.menu_font = ("", 12)
         self.menu_bar = tk.Menu(
             master=self.master,
-            background="#343638",
-            foreground="#ffffff",
-            activebackground="#343638",
-            activeforeground="#ffffff",
         )
 
         # File menu

@@ -1,9 +1,7 @@
 import customtkinter as ctk
 import tkinter as tk
 from customtkinter.windows.widgets.scaling import ScalingTracker
-
 from pytime.gui.frames.retime import RetimeFrame
-from pytime.gui.menu import Menu
 
 
 ctk.set_appearance_mode("system")
@@ -19,9 +17,6 @@ class App(ctk.CTk):
         
         # Configure icon
         self.iconbitmap(r"src\pytime\assets\icon.ico")
-        
-        # Bing menu bar
-        self.menu = Menu(self)
 
         # Configure window size and location
         window_scaling = ScalingTracker.get_widget_scaling(self)
