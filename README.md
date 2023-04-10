@@ -36,8 +36,12 @@ PyTime is a speedrun retime tool made to replace tool [SPRT](https://github.com/
 
 
 ### Installation
+1. Click [This Link](https://github.com/connerglover/PyTime/releases/latest/download/PyTime_Setup.exe)
+
+##### OR
+
 1. Click [Releases](https://github.com/ConnerConnerConner/PyTime/releases/) to view available binaries of this program.
-2. Click the binary you'd like to download (e.g. v1.0.3 Pytime Installer.exe).
+2. Click the binary you'd like to download (e.g. PyTime_Setup.exe.
 3. Wait for the Program to finish downloading.
 4. Run the Installer and wait for it to finish.
 
