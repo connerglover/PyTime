@@ -7,7 +7,7 @@
 
 ## About PyTime
 
-#### This program is essentially discounted for the time being; I may return to this, but I doubt it. I recommend that you use [Jerrin's Retime Tool](https://github.com/zugebot/Jerrins-Retiming-Tool), thank you for all your support.
+### This is the half-finished 2.0 update planned for PyTime that never was. If you would like to take this challenge on, I invite you. I will probably not be doing any more updates with this version, so have fun.
 
 PyTime is a speedrun retime tool made to replace tool [SPRT](https://github.com/Slush0Puppy/retime) with loads and more!
 ![GUI](https://i.imgur.com/SOhx1P6l.png)
