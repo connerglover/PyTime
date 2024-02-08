@@ -1,2 +1,0 @@
-auto-py-to-exe==2.33.0
-customtkinter==39.0.1
